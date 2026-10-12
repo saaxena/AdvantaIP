@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<rect width="400" height="400" fill="#FFFFFF"/>
+<path d="M 16 25 L 16 16 L 25 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 25 L 384 16 L 375 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 16 375 L 16 384 L 25 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 375 L 384 384 L 375 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<g fill="none" stroke="#0E1116" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="200" cy="150" rx="70" ry="34"/><line x1="130" y1="150" x2="130" y2="176" stroke-width="2"/><line x1="270" y1="150" x2="270" y2="176" stroke-width="2"/><circle cx="145" cy="182" r="10"/><circle cx="255" cy="182" r="10"/><path d="M 260 130 Q 330 120 340 210 Q 342 250 310 260" stroke-width="2"/><rect x="295" y="255" width="46" height="14" rx="4"/><line x1="200" y1="116" x2="110" y2="90" stroke="#5B6472" stroke-width="1" opacity="0.6"/><circle cx="200" cy="116" r="1.8" fill="#5B6472"/><text x="104" y="93.5" font-family="ui-monospace,monospace" font-size="12" fill="#5B6472" text-anchor="end">18</text>
+</g>
+</svg>

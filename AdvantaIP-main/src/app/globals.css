@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-paper-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-feature-settings: 'ss01' on, 'cv01' on;
+  }
+
+  ::selection {
+    background-color: #2f44e0;
+    color: #faf9f5;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2f44e0;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Thin, quiet scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #d9d4c6;
+    border-radius: 999px;
+    border: 2.5px solid #faf9f5;
+  }
+  .dark-scroll::-webkit-scrollbar-thumb {
+    background-color: #333a45;
+    border-color: #0e1116;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Faint drafting-grid texture, used sparingly behind hero/section panels */
+  .bg-drafting-grid {
+    background-image:
+      linear-gradient(to right, rgba(47, 68, 224, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47, 68, 224, 0.07) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-drafting-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(124, 139, 255, 0.09) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(124, 139, 255, 0.09) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(14, 17, 22, 0.14) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
+  }
+
+  .draw-path {
+    stroke-dasharray: 2200;
+    stroke-dashoffset: 2200;
+    animation: draw 2.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .draw-path {
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

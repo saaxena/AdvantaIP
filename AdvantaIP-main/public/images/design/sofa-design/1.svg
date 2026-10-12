@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<rect width="400" height="400" fill="#FFFFFF"/>
+<path d="M 16 25 L 16 16 L 25 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 25 L 384 16 L 375 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 16 375 L 16 384 L 25 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 375 L 384 384 L 375 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<g fill="none" stroke="#0E1116" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="86.84734663539179" y="254" width="226.30530672921643" height="46" rx="8"/><rect x="86.84734663539179" y="171.3595770541313" width="226.30530672921643" height="92.64042294586869" rx="10"/><rect x="79.03348245621903" y="192.0196827905985" width="26.04621393057583" height="107.98031720940152" rx="8"/><rect x="294.92030361320514" y="192.0196827905985" width="26.04621393057583" height="107.98031720940152" rx="8"/><line x1="162.28244887846392" y1="196.1517039378919" x2="162.28244887846392" y2="296" stroke-width="1.3" opacity="0.55"/><line x1="237.71755112153608" y1="196.1517039378919" x2="237.71755112153608" y2="296" stroke-width="1.3" opacity="0.55"/><line x1="102.47507499373728" y1="300" x2="102.47507499373728" y2="316" stroke-width="2"/><line x1="297.5249250062627" y1="300" x2="297.5249250062627" y2="316" stroke-width="2"/><line x1="86.84734663539179" y1="229.2078731162394" x2="26" y2="205.2078731162394" stroke="#5B6472" stroke-width="1" opacity="0.6"/><circle cx="86.84734663539179" cy="229.2078731162394" r="1.8" fill="#5B6472"/><text x="20" y="208.7078731162394" font-family="ui-monospace,monospace" font-size="12" fill="#5B6472" text-anchor="end">20</text><line x1="200" y1="286.2" x2="210" y2="346" stroke="#5B6472" stroke-width="1" opacity="0.6"/><circle cx="200" cy="286.2" r="1.8" fill="#5B6472"/><text x="216" y="349.5" font-family="ui-monospace,monospace" font-size="12" fill="#5B6472" text-anchor="start">22</text>
+</g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<rect width="400" height="400" fill="#FFFFFF"/>
+<path d="M 16 25 L 16 16 L 25 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 25 L 384 16 L 375 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 16 375 L 16 384 L 25 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 375 L 384 384 L 375 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<g fill="none" stroke="#0E1116" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="91.12451688910217" y="254" width="217.75096622179566" height="46" rx="8"/><rect x="91.12451688910217" y="175.92493008655424" width="217.75096622179566" height="88.07506991344576" rx="10"/><rect x="83.05892254776973" y="195.44369756491568" width="26.885314471108153" height="104.55630243508432" rx="8"/><rect x="290.05576298112214" y="195.44369756491568" width="26.885314471108153" height="104.55630243508432" rx="8"/><line x1="163.7081722963674" y1="199.34745106058796" x2="163.7081722963674" y2="296" stroke-width="1.3" opacity="0.55"/><line x1="236.29182770363263" y1="199.34745106058796" x2="236.29182770363263" y2="296" stroke-width="1.3" opacity="0.55"/><line x1="107.25570557176707" y1="300" x2="107.25570557176707" y2="316" stroke-width="2"/><line x1="292.74429442823293" y1="300" x2="292.74429442823293" y2="316" stroke-width="2"/><line x1="91.12451688910217" y1="230.57747902596628" x2="26" y2="206.57747902596628" stroke="#5B6472" stroke-width="1" opacity="0.6"/><circle cx="91.12451688910217" cy="230.57747902596628" r="1.8" fill="#5B6472"/><text x="20" y="210.07747902596628" font-family="ui-monospace,monospace" font-size="12" fill="#5B6472" text-anchor="end">20</text><line x1="200" y1="286.2" x2="210" y2="346" stroke="#5B6472" stroke-width="1" opacity="0.6"/><circle cx="200" cy="286.2" r="1.8" fill="#5B6472"/><text x="216" y="349.5" font-family="ui-monospace,monospace" font-size="12" fill="#5B6472" text-anchor="start">22</text>
+</g>
+</svg>
