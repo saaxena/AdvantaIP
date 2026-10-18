@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Lightbulb, Rocket, Cog, FileText, Scale, Building2 } from 'lucide-react';
 import { SectionHeading } from '@/components/shared/section-heading';
 import { RevealGroup, RevealItem } from '@/components/shared/reveal';
@@ -33,7 +34,14 @@ export function WhoWeServe() {
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-soft text-accent-deep">
                 <a.icon className="h-6 w-6" />
               </span>
-              <h3 className="mt-6 font-display text-xl font-bold uppercase tracking-wide text-ink">{a.title}</h3>
+              <h3 className="mt-6 font-display text-xl font-bold uppercase tracking-wide text-ink">
+                {a.title.split('&').map((part, i, arr) => (
+                  <Fragment key={i}>
+                    {part}
+                    {i < arr.length - 1 && <span style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>&amp;</span>}
+                  </Fragment>
+                ))}
+              </h3>
               {a.question && <p className="mt-2 font-display text-[0.95rem] font-semibold text-accent-deep">{a.question}</p>}
               <p className="mt-2.5 text-[0.95rem] leading-relaxed text-graphite">{a.text}</p>
             </RevealItem>

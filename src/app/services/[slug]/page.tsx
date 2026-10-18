@@ -70,9 +70,9 @@ export default async function ServiceDetailPage({
             </div>
 
             <Reveal delay={0.15} y={30}>
-              <div className="relative rounded-3xl border border-ink/8 bg-white p-3">
+              <div className="relative aspect-[9/7] overflow-hidden rounded-3xl border border-ink/8 bg-white">
                 <div className="absolute inset-3 rounded-2xl bg-dot-grid opacity-40" />
-                <ZoomableImage src={service.image} alt={service.imageHint} className="h-[20rem] w-full sm:h-[24rem] lg:h-[26rem]" />
+                <ZoomableImage src={service.image} alt={service.imageHint} className="absolute inset-0 h-full w-full" />
               </div>
             </Reveal>
           </div>

@@ -53,21 +53,14 @@ export const services: Service[] = [
       'Broken-line representations', 'Surface details', 'Shading', 'Complete drawing sets',
     ],
     closing: 'From product concept to professional design representation.',
-    image: '/images/design-samples/design-sample-01.jpg',
+    image: '/images/design-samples/design-01.jpg',
     imageHint: 'design patent drawing',
     exampleRows: [
       {
         label: 'Design Patent Drawing Samples',
-        items: Array.from({ length: 15 }, (_, i) => ({
-          image: `/images/design-samples/design-sample-${String(i + 1).padStart(2, '0')}.jpg`,
+        items: Array.from({ length: 6 }, (_, i) => ({
+          image: `/images/design-samples/design-${String(i + 1).padStart(2, '0')}.jpg`,
           hint: `design patent drawing sample ${i + 1}`,
-        })),
-      },
-      {
-        label: '',
-        items: Array.from({ length: 10 }, (_, i) => ({
-          image: `/images/design-samples/design-mechanical-${String(i + 1).padStart(2, '0')}.jpg`,
-          hint: `mechanical design patent drawing ${i + 1}`,
         })),
       },
     ],
@@ -92,28 +85,14 @@ export const services: Service[] = [
       'Flowcharts', 'Block diagrams', 'System diagrams', 'Electrical diagrams', 'Process diagrams', 'Multiple-view drawings',
     ],
     closing: 'Complex invention. Clear representation.',
-    image: '/images/utility-samples/utility-mechanical-01.jpg',
+    image: '/images/utility-samples/utility-01.jpg',
     imageHint: 'utility patent drawing',
     exampleRows: [
       {
-        label: 'Mechanical Utility Patent Drawings',
-        items: Array.from({ length: 7 }, (_, i) => ({
-          image: `/images/utility-samples/utility-mechanical-${String(i + 1).padStart(2, '0')}.jpg`,
-          hint: `mechanical utility patent drawing ${i + 1}`,
-        })),
-      },
-      {
         label: 'Utility Patent Drawing Samples',
-        items: Array.from({ length: 17 }, (_, i) => ({
-          image: `/images/utility-samples/utility-sample-${String(i + 1).padStart(2, '0')}.jpg`,
+        items: Array.from({ length: 11 }, (_, i) => ({
+          image: `/images/utility-samples/utility-${String(i + 1).padStart(2, '0')}.jpg`,
           hint: `utility patent drawing sample ${i + 1}`,
-        })),
-      },
-      {
-        label: 'Life Sciences Patent Drawings',
-        items: Array.from({ length: 8 }, (_, i) => ({
-          image: `/images/utility-samples/utility-life-sciences-${String(i + 1).padStart(2, '0')}.jpg`,
-          hint: `life sciences patent drawing ${i + 1}`,
         })),
       },
     ],

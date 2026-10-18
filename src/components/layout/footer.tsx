@@ -88,8 +88,8 @@ export function Footer() {
 
       <div className="relative border-t border-paper/10">
         <div className="container flex flex-col gap-3 py-6 text-xs text-paper/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 ADVANTAIP. All Rights Reserved.</p>
-          <p className="max-w-xl sm:text-right">{site.disclaimer}</p>
+          <p className="whitespace-nowrap">© 2026 ADVANTAIP. All Rights Reserved.</p>
+          <p className="sm:text-right min-[1180px]:whitespace-nowrap">{site.disclaimer}</p>
         </div>
       </div>
     </footer>

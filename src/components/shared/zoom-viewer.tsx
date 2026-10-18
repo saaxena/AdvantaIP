@@ -67,7 +67,7 @@ export function ZoomableImage({ src, alt, className }: { src: string; alt: strin
         onClick={() => setOpen({ image: src, hint: alt })}
         className={cn('relative block cursor-zoom-in', className)}
       >
-        <Image src={src} alt={alt} fill className="object-contain" unoptimized />
+        <Image src={src} alt={alt} fill className="object-contain p-4" unoptimized />
         <span className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-card ring-1 ring-ink/10">
           <Expand className="h-4 w-4 text-ink" />
         </span>

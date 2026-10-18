@@ -53,7 +53,7 @@ export function Header() {
       )}
     >
       <div className="container flex h-20 items-center justify-between">
-        <Logo markClassName="h-11" />
+        <Logo markClassName="h-11 sm:h-[3.25rem]" />
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 lg:flex">

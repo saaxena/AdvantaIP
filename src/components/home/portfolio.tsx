@@ -7,8 +7,9 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { SectionHeading } from '@/components/shared/section-heading';
 import { services } from '@/lib/services';
 
-const rowA = services.flatMap((s) => s.exampleRows[0]?.items ?? []).slice(0, 12);
-const rowB = services.flatMap((s) => s.exampleRows[1]?.items ?? s.exampleRows[0]?.items ?? []).slice(0, 12);
+const allItems = services.flatMap((s) => s.exampleRows.flatMap((r) => r.items));
+const rowA = allItems.filter((_, i) => i % 2 === 0);
+const rowB = allItems.filter((_, i) => i % 2 === 1);
 
 function Card({
   image,
