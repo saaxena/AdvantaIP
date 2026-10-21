@@ -106,9 +106,12 @@
     scrollbar-width: none;
   }
 }
+
+/* One consistent, standard "&" everywhere: Archivo's own ampersand is stylised, so for this single
+   character (U+0026) the display font falls back to a plain grotesque ampersand. */
 @font-face {
   font-family: 'AmpFix';
-  src: url('/amp-inter.woff2') format('woff2');
+  src: url('/fonts/amp-inter.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
