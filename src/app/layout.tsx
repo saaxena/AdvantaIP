@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="min-h-screen"
         style={{
           // @ts-expect-error -- custom properties
-          '--font-display': "'Archivo', system-ui, sans-serif",
+          '--font-display': "'AmpFix', 'Archivo', system-ui, sans-serif",
           '--font-body': "'Inter', system-ui, sans-serif",
           '--font-mono': "'IBM Plex Mono', ui-monospace, monospace",
           '--font-hand': "'Caveat', cursive",
