@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<rect width="400" height="400" fill="#FFFFFF"/>
+<path d="M 16 25 L 16 16 L 25 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 25 L 384 16 L 375 16" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 16 375 L 16 384 L 25 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M 384 375 L 384 384 L 375 384" stroke="#5B6472" stroke-width="1" fill="none" opacity="0.3"/>
+<g fill="none" stroke="#0E1116" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="80.21466743397076" y="254" width="239.57066513205848" height="46" rx="8"/><rect x="80.21466743397076" y="172.32275152472442" width="239.57066513205848" height="91.67724847527556" rx="10"/><rect x="71.41438757044605" y="192.74206364354333" width="29.33426621174904" height="107.25793635645667" rx="8"/><rect x="299.2513462178049" y="192.74206364354333" width="29.33426621174904" height="107.25793635645667" rx="8"/><line x1="160.0715558113236" y1="196.8259260673071" x2="160.0715558113236" y2="296" stroke-width="1.3" opacity="0.55"/><line x1="239.92844418867642" y1="196.8259260673071" x2="239.92844418867642" y2="296" stroke-width="1.3" opacity="0.55"/><line x1="97.81522716102018" y1="300" x2="97.81522716102018" y2="316" stroke-width="2"/><line x1="302.1847728389798" y1="300" x2="302.1847728389798" y2="316" stroke-width="2"/><line x1="80.21466743397076" y1="229.49682545741734" x2="26" y2="205.49682545741734" stroke="#5B6472" stroke-width="1" opacity="0.6"/><circle cx="80.21466743397076" cy="229.49682545741734" r="1.8" fill="#5B6472"/><text x="20" y="208.99682545741734" font-family="ui-monospace,monospace" font-size="12" fill="#5B6472" text-anchor="end">20</text><line x1="200" y1="286.2" x2="210" y2="346" stroke="#5B6472" stroke-width="1" opacity="0.6"/><circle cx="200" cy="286.2" r="1.8" fill="#5B6472"/><text x="216" y="349.5" font-family="ui-monospace,monospace" font-size="12" fill="#5B6472" text-anchor="start">22</text>
+</g>
+</svg>
