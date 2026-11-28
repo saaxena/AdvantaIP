@@ -36,6 +36,7 @@ export function Header() {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const { scrollY } = useScroll();
   const pathname = usePathname();
+  const onServicePage = pathname.startsWith('/services/'); // Design / Utility / Trademark pages: no "Get a Quote" button
   const closeTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const openServices = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -142,13 +143,15 @@ export function Header() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button asChild size="sm" variant="accent" className="bg-[#0A3D91] hover:bg-[#0A84FF]">
-            <Link href="/contact">
-              Get a Quote <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Button>
-        </div>
+        {!onServicePage && (
+          <div className="hidden items-center gap-3 lg:flex">
+            <Button asChild size="sm" variant="accent" className="bg-[#0A3D91] hover:bg-[#0A84FF]">
+              <Link href="/contact">
+                Get a Quote <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </Button>
+          </div>
+        )}
 
         {/* Mobile trigger */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -187,11 +190,13 @@ export function Header() {
                 </SheetClose>
               ))}
             </nav>
-            <div className="mt-8 flex flex-col gap-3">
-              <Button asChild variant="accent">
-                <Link href="/contact">Get a Quote</Link>
-              </Button>
-            </div>
+            {!onServicePage && (
+              <div className="mt-8 flex flex-col gap-3">
+                <Button asChild variant="accent">
+                  <Link href="/contact">Get a Quote</Link>
+                </Button>
+              </div>
+            )}
           </SheetContent>
         </Sheet>
       </div>
