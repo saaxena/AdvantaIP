@@ -124,11 +124,14 @@ export default async function ServiceDetailPage({
                     <li key={p} className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent-dark" /> {p}</li>
                   ))}
                 </ul>
-                <Button asChild className="mt-6 w-full" variant="accent">
-                  <Link href="/contact">Get a Quote <ArrowRight className="h-4 w-4" /></Link>
-                </Button>
-                <Button asChild className="mt-3 w-full" variant="outline-light">
-                  <Link href="/order">Start Your Project</Link>
+                <Button asChild className="mt-6 w-full" variant="outline-light">
+                  <a
+                    href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__70PPfFUMVE3Vlo4Q1NLUE0zTzdRVUI1Vk1TUkdGTi4u"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Start Your Project
+                  </a>
                 </Button>
               </div>
             </Reveal>

@@ -1,228 +1,91 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Check, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUpRight, Cog, PenTool, BadgeCheck, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Reveal, RevealGroup, RevealItem } from '@/components/shared/reveal';
 import { FieldTag } from '@/components/shared/section-heading';
-import { ZoomableImage } from '@/components/shared/zoom-viewer';
-import { ExampleGallery } from '@/components/services/example-gallery';
-import { services, getServiceBySlug, getAdjacentServices, serviceIcons, referenceMaterial, principles } from '@/lib/services';
-import { whyItems } from '@/lib/site';
+import { services } from '@/lib/services';
 
-export function generateStaticParams() {
-  return services.map((s) => ({ slug: s.slug }));
-}
+export const metadata: Metadata = {
+  title: 'Services',
+  description: 'Design patent drawings, utility patent drawings, and trademark drawings — professional intellectual property drawing services by ADVANTAIP.',
+};
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const service = getServiceBySlug(slug);
-  if (!service) return {};
-  return {
-    title: service.title,
-    description: `${service.tagline} ${service.description}`,
-  };
-}
+const iconBySlug = {
+  'design-patent-drawing-services': PenTool,
+  'utility-patent-drawing-services': Cog,
+  'trademark-patent-drawing-services': BadgeCheck,
+} as const;
 
-export default async function ServiceDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const service = getServiceBySlug(slug);
-  if (!service) notFound();
-
-  const { prev, next } = getAdjacentServices(slug);
-
+export default function ServicesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden pb-4 pt-32 sm:pb-6 sm:pt-36">
+      <section className="relative overflow-hidden pb-16 pt-40 sm:pb-20 sm:pt-48">
         <div className="pointer-events-none absolute inset-0 bg-drafting-grid [mask-image:radial-gradient(ellipse_75%_60%_at_50%_0%,black_0%,transparent_70%)]" />
-        <div className="container relative">
+        <div className="container relative max-w-2xl">
           <Reveal>
-            <nav className="flex items-center gap-1.5 text-sm text-graphite-soft">
-              <Link href="/services" className="transition-colors hover:text-ink">Services</Link>
-              <ChevronRight className="h-3.5 w-3.5" />
-              <span className="text-ink">{service.shortTitle}</span>
-            </nav>
+            <FieldTag>Services</FieldTag>
           </Reveal>
-
-          <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div>
-              <Reveal delay={0.05}>
-                <FieldTag>Service</FieldTag>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <h1 className="mt-4 text-balance font-display text-[2.35rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-[3rem]">
-                  {service.title}
-                </h1>
-              </Reveal>
-              <Reveal delay={0.16}>
-                <p className="mt-5 max-w-lg text-lg leading-relaxed text-graphite">{service.tagline}</p>
-              </Reveal>
-            </div>
-
-            <Reveal delay={0.15} y={30}>
-              <div className="relative aspect-[9/7] overflow-hidden rounded-3xl border border-ink/8 bg-white">
-                <div className="absolute inset-3 rounded-2xl bg-dot-grid opacity-40" />
-                <ZoomableImage src={service.image} alt={service.imageHint} className="absolute inset-0 h-full w-full" />
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={0.08}>
+            <h1 className="mt-4 font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-[3.25rem]">
+              Professional Intellectual Property Drawing Services
+            </h1>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <p className="mt-5 text-lg leading-relaxed text-graphite">
+              We provide specialized drawing services for different types of intellectual property applications and documentation.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Overview */}
-      <section className="pb-20 pt-6">
-        <div className="container grid gap-12 lg:grid-cols-[1fr_360px]">
-          <div>
-            <Reveal>
-              <p className="text-lg leading-relaxed text-graphite">{service.description}</p>
-            </Reveal>
-
-            <div className="mt-12 grid gap-10 sm:grid-cols-2">
-              <Reveal delay={0.05}>
-                <h2 className="font-display text-xl font-bold text-ink">Services may include</h2>
-                <ul className="mt-5 space-y-3.5">
-                  {service.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-[0.95rem] leading-relaxed text-graphite">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <h2 className="font-display text-xl font-bold text-ink">We can work from</h2>
-                <ul className="mt-5 space-y-3.5">
-                  {referenceMaterial.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-[0.95rem] leading-relaxed text-graphite">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-          </div>
-
-          {/* Sticky CTA sidebar */}
-          <div className="lg:relative">
-            <Reveal delay={0.15} className="lg:sticky lg:top-28">
-              <div className="rounded-2xl border border-ink/10 bg-[#01162B] p-7 text-paper shadow-card">
-                <p className="font-mono text-xs uppercase tracking-wider text-paper/40">ADVANTAIP</p>
-                <p className="mt-2 font-display text-2xl font-bold leading-snug">{service.closing}</p>
-                <ul className="mt-6 space-y-2.5 border-t border-paper/10 pt-6 text-sm text-paper/70">
-                  {principles.map((p) => (
-                    <li key={p} className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-accent-dark" /> {p}</li>
-                  ))}
-                </ul>
-                <Button asChild className="mt-6 w-full" variant="outline-light">
-                  <a
-                    href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__70PPfFUMVE3Vlo4Q1NLUE0zTzdRVUI1Vk1TUkdGTi4u"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Start Your Project
-                  </a>
-                </Button>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Examples */}
-      {service.exampleRows.length > 0 && (
-        <section className="border-y border-ink/8 bg-paper-dim/50 py-20">
-          <div className="container">
-            <Reveal>
-              <FieldTag>Sample Drawings</FieldTag>
-              <h2 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl">Complex invention. Clear representation.</h2>
-            </Reveal>
-            <div className="mt-12">
-              <ExampleGallery rows={service.exampleRows} />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Key features */}
-      <section className="py-20">
+      <section className="pb-24 sm:pb-32">
         <div className="container">
-          <Reveal>
-            <FieldTag>Why ADVANTAIP</FieldTag>
-            <h2 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl">More Than Drawing. We Understand the Idea.</h2>
-          </Reveal>
-          <RevealGroup className="mt-12 grid gap-5 sm:grid-cols-2">
-            {whyItems.slice(0, 4).map((f) => {
-              const Icon = serviceIcons[f.icon];
+          <RevealGroup className="grid gap-6 lg:grid-cols-3">
+            {services.map((s) => {
+              const Icon = iconBySlug[s.slug as keyof typeof iconBySlug];
               return (
-                <RevealItem key={f.title} className="flex gap-4 rounded-2xl border border-ink/10 bg-white p-6">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent-deep">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <h3 className="font-display text-base font-bold text-ink">{f.title}</h3>
-                    <p className="mt-1.5 text-[0.95rem] leading-relaxed text-graphite">{f.description}</p>
-                  </div>
+                <RevealItem key={s.slug}>
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/20 hover:shadow-lift"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden bg-white">
+<Image src={s.image} alt={s.imageHint} fill className="object-contain p-1.5 transition-transform duration-500 group-hover:scale-105" unoptimized />
+</div>
+                    <div className="flex flex-1 flex-col p-7">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-ink/8 bg-paper text-ink transition-colors group-hover:border-accent/25 group-hover:bg-accent-soft group-hover:text-accent-deep">
+                        <Icon className="h-[1.05rem] w-[1.05rem]" />
+                      </span>
+                      <h2 className="mt-4 font-display text-xl font-bold text-ink">{s.title}</h2>
+                      <p className="mt-1 font-display text-[0.95rem] font-semibold text-accent-deep">{s.tagline}</p>
+                      <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-graphite">{s.description}</p>
+                      <div className="mt-6 flex items-center justify-between border-t border-ink/8 pt-5">
+                        <span className="text-sm italic text-graphite-soft">{s.closing}</span>
+                        <span className="flex items-center gap-1 text-sm font-medium text-ink transition-colors group-hover:text-accent">
+                          Learn More
+                          <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
                 </RevealItem>
               );
             })}
           </RevealGroup>
-        </div>
-      </section>
 
-      {/* FAQs */}
-      <section className="border-t border-ink/8 bg-paper-dim/50 py-20">
-        <div className="container max-w-3xl">
-          <Reveal>
-            <FieldTag>FAQ</FieldTag>
-            <h2 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl">Frequently Asked Questions</h2>
+          <Reveal delay={0.2} className="mt-14 flex flex-col items-center gap-4 rounded-3xl border border-ink/10 bg-paper-dim/60 p-10 text-center sm:p-14">
+            <h3 className="font-display text-2xl font-bold text-ink sm:text-3xl">Have an Idea? Let’s Bring It Into Focus.</h3>
+            <p className="max-w-md text-graphite">
+              Tell us about your project, provide your available reference material, and let us understand what you need.
+            </p>
+            <Button asChild size="lg">
+              <Link href="/contact">
+                GET A QUOTE <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </Reveal>
-          <Reveal delay={0.1} className="mt-10 rounded-3xl border border-ink/10 bg-white px-6 shadow-soft sm:px-10">
-            <Accordion type="single" collapsible>
-              {service.faqs.map((f, i) => (
-                <AccordionItem key={i} value={`item-${i}`}>
-                  <AccordionTrigger>{f.question}</AccordionTrigger>
-                  <AccordionContent>{f.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Prev / Next */}
-      <section className="py-16">
-        <div className="container grid gap-4 sm:grid-cols-2">
-          <Link
-            href={`/services/${prev.slug}`}
-            className="group flex items-center gap-4 rounded-2xl border border-ink/10 bg-white p-6 transition-colors hover:border-accent/25"
-          >
-            <ArrowLeft className="h-4 w-4 shrink-0 text-graphite-soft transition-transform group-hover:-translate-x-1" />
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-graphite-soft">Previous</p>
-              <p className="mt-1 font-display font-semibold text-ink">{prev.shortTitle}</p>
-            </div>
-          </Link>
-          <Link
-            href={`/services/${next.slug}`}
-            className="group flex items-center justify-between gap-4 rounded-2xl border border-ink/10 bg-white p-6 text-right transition-colors hover:border-accent/25"
-          >
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-graphite-soft">Next</p>
-              <p className="mt-1 font-display font-semibold text-ink">{next.shortTitle}</p>
-            </div>
-            <ArrowRight className="h-4 w-4 shrink-0 text-graphite-soft transition-transform group-hover:translate-x-1" />
-          </Link>
         </div>
       </section>
     </>
